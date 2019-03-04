@@ -1,0 +1,8 @@
+ndb/cs
+ndb/dns
+
+rpihost='10.0.0.6'
+
+mount -A tcp!10.0.0.6!564 /n/remote/rpi
+bind /n/remote/rpi /usr/tmendoza/rpi
+

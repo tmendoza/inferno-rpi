@@ -1,0 +1,533 @@
+dev
+	root
+	cons
+	env
+	mnt
+	pipe
+	prog
+	srv
+	dup
+	uart
+	draw screen
+	pointer
+	usb
+	kbin kbd
+	sd
+	ip  ip ipv6 ipaux iproute arp netlog ptclbsum iprouter plan9 nullmedium pktmedium netaux
+	ether netif netaux
+	spi spi
+	gpio gpio
+	i2c i2c
+
+link
+	archbcm
+	usbdwc
+	etherusb
+	ethermedium
+	loopbackmedium
+
+ip
+	il
+	tcp
+	udp
+	ipifc
+	icmp
+	icmp6
+
+lib
+	interp
+	tk
+	draw
+	memlayer
+	memdraw
+	keyring
+	sec
+	mp
+	math
+	kern
+
+mod
+	math
+	sys
+	draw
+	tk
+	keyring
+	crypt
+	ipints
+
+port
+	alarm
+	alloc
+	allocb
+	chan
+	portclock
+	dev
+	devcons
+	dial
+	dis
+	discall
+	exception
+	exportfs
+	inferno
+	latin1
+	mul64fract
+	nocache
+	nodynld
+	parse
+	pgrp
+	print
+	proc
+	qio
+	qlock
+	random
+	sysfile
+	taslock
+	tod
+	xalloc
+
+misc
+	sdmmc	emmc
+	dma
+	uartmini
+	coproc
+
+code
+	int kernel_pool_pcnt = 10;
+	ulong main_pool_pcnt = 40;
+	ulong heap_pool_pcnt = 20;
+	ulong image_pool_pcnt = 40;
+	int cflag = 1;
+
+	int consoleprint = 1;
+	int redirectconsole = 1;
+	char debug_keys = 1;
+	int panicreset = 0;
+
+init
+	rpiinit
+
+root
+	/chan	/
+	/dev	/
+	/dis
+	/lib	/
+	/env	/
+	/fd	/
+	/net	/
+	/prog	/
+	/n	/
+	/tmp	/
+	/dis/lib
+	/dis/disk
+	/osinit.dis
+	/dis/sh.dis
+	/dis/tiny/sh.dis
+	/dis/ls.dis
+	/dis/mc.dis
+	/dis/lc
+	/dis/ps.dis
+	/dis/ns.dis
+	/dis/cat.dis
+	/dis/bind.dis
+	/dis/mount.dis
+	/dis/mntgen.dis
+	/dis/listen.dis
+	/dis/export.dis
+	/dis/unmount.dis
+	/dis/sleep.dis
+	/dis/pwd.dis
+	/dis/echo.dis
+	/dis/cd.dis
+	/dis/netstat.dis
+	/dis/styxlisten.dis
+	/dis/time.dis
+	/dis/lib/arg.dis
+	/dis/lib/auth.dis
+	/dis/lib/lock.dis
+	/dis/lib/rand.dis
+	/dis/lib/random.dis
+	/dis/lib/dial.dis
+	/dis/lib/bufio.dis
+	/dis/lib/timers.dis
+	/dis/lib/string.dis
+	/dis/lib/filepat.dis
+	/dis/lib/readdir.dis
+	/dis/lib/workdir.dis
+	/dis/lib/daytime.dis
+	/dis/lib/nametree.dis
+	/dis/lib/styxservers.dis
+# usb support
+	/lib/usbdb
+	/dis/usb/usbd.dis
+	/dis/lib/usb/usb.dis
+	/dis/lib/usb/mice.dis
+	/dis/lib/usb/usbkb.dis
+	/dis/lib/usb/ethersmsc.dis
+# ethernet, dhcp
+	/dis/ip/ping.dis
+	/dis/ip/dhcp.dis
+	/dis/lib/ip.dis
+	/dis/lib/dhcpclient.dis
+	/dis/ndb/cs.dis
+	/dis/ndb/dns.dis
+	/dis/lib/attrdb.dis
+	/dis/lib/ipattr.dis
+	/lib/ndb/common
+	/lib/ndb/dns
+	/lib/ndb/inferno
+	/lib/ndb/local
+	/lib/ndb/registry
+	/lib/ndb/services
+# disk support
+	/usr	/
+	/usr/inferno	/
+	/dis/dd.dis
+	/dis/fs.dis
+	/dis/dossrv.dis
+	/dis/lib/fslib.dis
+	/dis/lib/fsproto.dis
+	/dis/lib/fsfilter.dis
+	/dis/zeros.dis
+	/dis/disk
+	/dis/disk/calc.tab.dis
+	/dis/disk/fdisk.dis
+	/dis/disk/format.dis
+	/dis/disk/ftl.dis
+	/dis/disk/kfs.dis
+	/dis/disk/kfscmd.dis
+	/dis/disk/mbr.dis
+	/dis/disk/mkext.dis
+	/dis/disk/mkfs.dis
+	/dis/disk/pedit.dis
+	/dis/disk/prep.dis
+	/dis/lib/disks.dis
+	/dis/lib/styx.dis
+# misc
+	/dis/math/sieve.dis
+	/dis/9660srv.dis
+	/dis/9export.dis
+	/dis/9srvfs.dis
+	/dis/9win.dis
+	/dis/acme.dis
+	/dis/archfs.dis
+	/dis/ar.dis
+	/dis/asm.dis
+	/dis/auhdr.dis
+	/dis/auplay.dis
+	/dis/basename.dis
+	/dis/B.dis
+	/dis/bytes.dis
+	/dis/calc.dis
+	/dis/cal.dis
+	/dis/cddb.dis
+	/dis/charon.dis
+	/dis/chgrp.dis
+	/dis/chmod.dis
+	/dis/cleanname.dis
+	/dis/cmp.dis
+	/dis/comm.dis
+	/dis/cook.dis
+	/dis/cprof.dis
+	/dis/cpu.dis
+	/dis/crypt.dis
+	/dis/date.dis
+	/dis/dbfs.dis
+	/dis/diff.dis
+	/dis/disdep.dis
+	/dis/disdump.dis
+	/dis/du.dis
+	/dis/ed.dis
+	/dis/emuinit.dis
+	/dis/env.dis
+	/dis/fc.dis
+	/dis/fcp.dis
+	/dis/fmt.dis
+	/dis/fortune.dis
+	/dis/freq.dis
+	/dis/ftest.dis
+	/dis/ftpfs.dis
+	/dis/getauthinfo.dis
+	/dis/gettar.dis
+	/dis/grep.dis
+	/dis/gunzip.dis
+	/dis/gzip.dis
+	/dis/idea.dis
+	/dis/import.dis
+	/dis/iostats.dis
+	/dis/itest.dis
+	/dis/itreplay.dis
+	/dis/kill.dis
+	/dis/limbo.dis
+	/dis/lockfs.dis
+	/dis/logfile.dis
+	/dis/look.dis
+	/dis/lstar.dis
+	/dis/m4.dis
+	/dis/man2html.dis
+	/dis/man2txt.dis
+	/dis/mash.dis
+	/dis/md5sum.dis
+	/dis/mdb.dis
+	/dis/memfs.dis
+	/dis/metamorph.dis
+	/dis/mkdir.dis
+	/dis/mk.dis
+	/dis/mouse.dis
+	/dis/mprof.dis
+	/dis/mv.dis
+	/dis/netkey.dis
+	/dis/newer.dis
+	/dis/nsbuild.dis
+	/dis/pause.dis
+	/dis/plumb.dis
+	/dis/plumber.dis
+	/dis/prof.dis
+	/dis/puttar.dis
+	/dis/ramfile.dis
+	/dis/randpass.dis
+	/dis/raw2iaf.dis
+	/dis/rawdbfs.dis
+	/dis/rcmd.dis
+	/dis/rdp.dis
+	/dis/read.dis
+	/dis/rioimport.dis
+	/dis/rm.dis
+	/dis/runas.dis
+	/dis/sed.dis
+	/dis/sendmail.dis
+	/dis/sha1sum.dis
+	/dis/sort.dis
+	/dis/src.dis
+	/dis/stack.dis
+	/dis/stackv.dis
+	/dis/stream.dis
+	/dis/strings.dis
+	/dis/styxchat.dis
+	/dis/styxmon.dis
+	/dis/sum.dis
+	/dis/tail.dis
+	/dis/tarfs.dis
+	/dis/tclsh.dis
+	/dis/tcs.dis
+	/dis/tee.dis
+	/dis/telnet.dis
+	/dis/test.dis
+	/dis/timestamp.dis
+	/dis/tkcmd.dis
+	/dis/tokenize.dis
+	/dis/touchcal.dis
+	/dis/touch.dis
+	/dis/trfs.dis
+	/dis/tsort.dis
+	/dis/unicode.dis
+	/dis/uniq.dis
+	/dis/units.dis
+	/dis/uudecode.dis
+	/dis/uuencode.dis
+	/dis/vacfs.dis
+	/dis/vacget.dis
+	/dis/vacput.dis
+	/dis/wav2iaf.dis
+	/dis/wc.dis
+	/dis/webgrab.dis
+	/dis/wish.dis
+	/dis/wmexport.dis
+	/dis/wmimport.dis
+	/dis/xargs.dis
+	/dis/xd.dis
+	/dis/yacc.dis
+	/dis/wm/about.dis
+	/dis/wm/avi.dis
+	/dis/wm/bounce.dis
+	/dis/wm/brutus.dis
+	/dis/wm/c4.dis
+	/dis/wm/calendar.dis
+	/dis/wm/chat.dis
+	/dis/wm/clock.dis
+	/dis/wm/coffee.dis
+	/dis/wm/collide.dis
+	/dis/wm/colors.dis
+	/dis/wm/cprof.dis
+	/dis/wm/date.dis
+	/dis/wm/debdata.dis
+	/dis/wm/deb.dis
+	/dis/wm/debsrc.dis
+	/dis/wm/dmview.dis
+	/dis/wm/dmwm.dis
+	/dis/wm/filename.dis
+	/dis/wm/ftree.dis
+	/dis/wm/getauthinfo.dis
+	/dis/wm/keyboard.dis
+	/dis/wm/logon.dis
+	/dis/wm/logwindow.dis
+	/dis/wm/mand.dis
+	/dis/wm/man.dis
+	/dis/wm/mash.dis
+	/dis/wm/memory.dis
+	/dis/wm/mprof.dis
+	/dis/wm/pen.dis
+	/dis/wm/prof.dis
+	/dis/wm/qt.dis
+	/dis/wm/readmail.dis
+	/dis/wm/remotelogon.dis
+	/dis/wm/rmtdir.dis
+	/dis/wm/sendmail.dis
+	/dis/wm/smenu.dis
+	/dis/wm/task.dis
+	/dis/wm/telnet.dis
+	/dis/wm/toolbar.dis
+	/dis/wm/unibrowse.dis
+	/dis/wm/view.dis
+	/dis/wm/vt.dis
+	/dis/wm/wish.dis
+	/dis/wm/wm.dis
+	/dis/wm/wmplay.dis
+	/dis/acme/acme.dis
+	/dis/acme/buff.dis
+	/dis/acme/col.dis
+	/dis/acme/dat.dis
+	/dis/acme/ecmd.dis
+	/dis/acme/elog.dis
+	/dis/acme/exec.dis
+	/dis/acme/file.dis
+	/dis/acme/frame.dis
+	/dis/acme/fsys.dis
+	/dis/acme/graph.dis
+	/dis/acme/gui.dis
+	/dis/acme/guiwm.dis
+	/dis/acme/look.dis
+	/dis/acme/regx.dis
+	/dis/acme/row.dis
+	/dis/acme/scrl.dis
+	/dis/acme/styxaux.dis
+	/dis/acme/text.dis
+	/dis/acme/util.dis
+	/dis/acme/wind.dis
+	/dis/acme/xfid.dis
+	/dis/ndb/csquery.dis
+	/dis/ndb/dnsquery.dis
+	/dis/ndb/mkhash.dis
+	/dis/ndb/query.dis
+	/dis/ndb/registry.dis
+	/dis/ndb/regquery.dis
+# More Stuff
+	/dis/lib/asn1.dis
+	/dis/lib/attrhash.dis
+	/dis/lib/auth9.dis
+	/dis/lib/bloomfilter.dis
+	/dis/lib/cfg.dis
+	/dis/lib/cfgfile.dis
+	/dis/lib/chanfill.dis
+	/dis/lib/complete.dis
+	/dis/lib/crc.dis
+	/dis/lib/csv.dis
+	/dis/lib/dbm.dis
+	/dis/lib/dbsrv.dis
+	/dis/lib/debug.dis
+	/dis/lib/deflate.dis
+	/dis/lib/devpointer.dis
+	/dis/lib/dialog.dis
+	/dis/lib/dict.dis
+	/dis/lib/diskblocks.dis
+	/dis/lib/dividers.dis
+	/dis/lib/drawmux.dis
+	/dis/lib/ecmascript.dis
+	/dis/lib/ether.dis
+	/dis/lib/exception.dis
+	/dis/lib/factotum.dis
+	/dis/lib/imageremap.dis
+	/dis/lib/inflate.dis
+	/dis/lib/irsage.dis
+	/dis/lib/irsim.dis
+	/dis/lib/itslib.dis
+	/dis/lib/json.dis
+	/dis/lib/keyset.dis
+	/dis/lib/libc0.dis
+	/dis/lib/libc.dis
+	/dis/lib/lists.dis
+	/dis/lib/login.dis
+	/dis/lib/mashlib.dis
+	/dis/lib/mashparse.dis
+	/dis/lib/mpeg.dis
+	/dis/lib/msgio.dis
+	/dis/lib/names.dis
+	/dis/lib/newns.dis
+	/dis/lib/ninep.dis
+	/dis/lib/oldauth.dis
+	/dis/lib/palmdb.dis
+	/dis/lib/palm.dis
+	/dis/lib/palmfile.dis
+	/dis/lib/parseman.dis
+	/dis/lib/plumbing.dis
+	/dis/lib/plumbmsg.dis
+	/dis/lib/pop3.dis
+	/dis/lib/popup.dis
+	/dis/lib/powerman.dis
+	/dis/lib/profile.dis
+	/dis/lib/pslib.dis
+	/dis/lib/quicktime.dis
+	/dis/lib/rabin.dis
+	/dis/lib/readgif.dis
+	/dis/lib/readjpg.dis
+	/dis/lib/readpicfile.dis
+	/dis/lib/readpng.dis
+	/dis/lib/readxbitmap.dis
+	/dis/lib/regex.dis
+	/dis/lib/regexutils.dis
+	/dis/lib/registries.dis
+	/dis/lib/rfc822.dis
+	/dis/lib/riff.dis
+	/dis/lib/scoretable.dis
+	/dis/lib/scsiio.dis
+	/dis/lib/secstore.dis
+	/dis/lib/selectfile.dis
+	/dis/lib/sets32.dis
+	/dis/lib/sets.dis
+	/dis/lib/sexprs.dis
+	/dis/lib/slip.dis
+	/dis/lib/smtp.dis
+	/dis/lib/ssl.dis
+	/dis/lib/strinttab.dis
+	/dis/lib/styxflush.dis
+	/dis/lib/styxlib.dis
+	/dis/lib/styxpersist.dis
+	/dis/lib/tables.dis
+	/dis/lib/tabs.dis
+	/dis/lib/tcl_calc.dis
+	/dis/lib/tcl_core.dis
+	/dis/lib/tcl_inthash.dis
+	/dis/lib/tcl_io.dis
+	/dis/lib/tcl_list.dis
+	/dis/lib/tcl_modhash.dis
+	/dis/lib/tcl_stack.dis
+	/dis/lib/tcl_strhash.dis
+	/dis/lib/tcl_string.dis
+	/dis/lib/tcl_symhash.dis
+	/dis/lib/tcl_tk.dis
+	/dis/lib/tcl_utils.dis
+	/dis/lib/tftp.dis
+	/dis/lib/titlebar.dis
+	/dis/lib/tkclient.dis
+	/dis/lib/translate.dis
+	/dis/lib/ubfa.dis
+	/dis/lib/url.dis
+	/dis/lib/vac.dis
+	/dis/lib/venti.dis
+	/dis/lib/virgil.dis
+	/dis/lib/volume.dis
+	/dis/lib/wait.dis
+	/dis/lib/watchvars.dis
+	/dis/lib/winplace.dis
+	/dis/lib/wmclient.dis
+	/dis/lib/wmlib.dis
+	/dis/lib/wmsrv.dis
+	/dis/lib/writegif.dis
+	/dis/lib/xml.dis
+# structure
+	/boot	/
+	/man	/
+	/fonts	/
+	/icons	/
+	/module	/
+	/locale	/
+	/services	/
